@@ -1,5 +1,6 @@
 package com.userservice.userservice.security.services;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.userservice.userservice.models.User;
 import com.userservice.userservice.repositories.UserRepository;
 import com.userservice.userservice.security.models.CustomUserDetails;
