@@ -16,7 +16,7 @@ import java.util.List;
 public class CustomUserDetails implements UserDetails {
 
 //    private User user;
-    private ArrayList<GrantedAuthority> authorities;
+    private List<GrantedAuthority> authorities;
     private String password;
     private String username;
     private boolean accountNonExpired;
@@ -26,7 +26,7 @@ public class CustomUserDetails implements UserDetails {
 
     public CustomUserDetails(User user){
 //        this.user = user;
-
+        authorities = new ArrayList<>();
         for (Role role : user.getRoles()){
             this.authorities.add((new CustomGrantedAuthority(role)));
         }
