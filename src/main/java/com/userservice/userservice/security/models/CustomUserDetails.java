@@ -23,6 +23,7 @@ public class CustomUserDetails implements UserDetails {
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
     private boolean enabled;
+    private Long userId;
 
     public CustomUserDetails(User user){
 //        this.user = user;
@@ -36,7 +37,13 @@ public class CustomUserDetails implements UserDetails {
         this.accountNonLocked = true;
         this.credentialsNonExpired = true;
         this.enabled = true;
+        this.userId = user.getId();
     }
+
+    public Long getUserId() {
+        return this.userId;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 //        List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
